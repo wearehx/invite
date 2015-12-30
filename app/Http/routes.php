@@ -20,5 +20,6 @@ $app->get('callback', function () {
     $client = new \Github\Client();
     $client->authenticate(config('services.github.user_token'), config('services.github.user_password'), Github\Client::AUTH_URL_TOKEN);
     $client->organization('wearehx')->teams()->addMember(config('services.github.team'), $user->user['login']);
-    return redirect("https://github.com/wearehx");
+
+    return redirect('https://github.com/wearehx');
 });
